@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See Network</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <uni-app class="uni-app--showtabbar uni-app--maxwidth">
+        <uni-page data-page="pages/index">
+
+            <uni-page-wrapper>
+                <uni-page-body>
+                    <uni-view class="root">
+                        <uni-view class="dapp" style="border-top: 0px solid rgb(246, 246, 246);">
+
+                            <!-- navigate -->
+                            <uni-view class="navigate" style="padding-top: 0px; height: 55px;">
+                                <uni-view class="left">
+                                    <uni-text><span>Buy Hashrate</span></uni-text>
+                                </uni-view>
+                                <uni-view class="right">
+                                    <uni-view class="lang a">
+                                        <i class="fa-solid fa-globe"></i>
+                                        EN
+                                    </uni-view>
+                                    <uni-view class="chat a">
+                                        <i class="fa-solid fa-headset"></i>
+                                        <span></span>
+                                    </uni-view>
+                                </uni-view>
+                            </uni-view>
+                            <uni-view class="pt55"></uni-view>
+
+                            <!-- main -->
+                            <uni-view class="price">
+                                <uni-view class="total">
+                                    <uni-view class="info">
+                                        <p>Package Price</p>
+                                        <strong id="packagePrice"></strong>
+                                    </uni-view>
+                                    <uni-view class="action">
+                                        <uni-view class="balance"><span>Available
+                                                Balance:<strong>0.000000</strong>USDT</span></uni-view>
+                                        <uni-view class="input">
+                                            <uni-view>
+                                                <uni-input>
+                                                    <div class="uni-input-wrapper">
+                                                        <input id="buyHZ" value="" maxlength="140"
+                                                            step="0.000000000000000001" enterkeyhint="done"
+                                                            pattern="[0-9]*" autocomplete="off" type="number"
+                                                            class="uni-input-input" disabled><!---->
+                                                    </div>
+                                                </uni-input>
+                                                <span>GH/s</span>
+                                            </uni-view>
+                                            <uni-view><span id="packageValue">0.00</span>USDT</uni-view>
+                                        </uni-view>
+                                        <uni-view class="earns">Daily earning<strong
+                                                id="packageEarn">0.00</strong>SEE</uni-view>
+                                        <uni-view class="button">
+                                            <uni-button class="">Buy Hashrate</uni-button>
+                                        </uni-view>
+                                    </uni-view>
+                                    <uni-view class="image">
+                                        <uni-image style="height: 48px;">
+                                            <div
+                                                style="background-image: url(&quot;/static/img/icon_03.6a84d045.svg&quot;); background-size: 100% 100%; background-repeat: no-repeat;">
+                                            </div>
+                                            <uni-resize-sensor>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                                <div>
+                                                    <div></div>
+                                                </div>
+                                            </uni-resize-sensor>
+                                            <img src="/static/img/icon_03.6a84d045.svg" draggable="false">
+                                        </uni-image>
+                                    </uni-view>
+                                </uni-view>
+                                <uni-view class="order">
+                                    <uni-view class="title">Order list</uni-view>
+                                    <div class="package">
+                                        <div class="package-title">
+                                            <div class="package-name">
+                                                Package
+                                            </div>
+                                            <div class="package-value f0">
+                                                100
+                                            </div>
+                                        </div>
+
+                                        <a href="#top" class="package-button f0" onclick="handleBuyPacke(100)">
+                                            Choose
+                                        </a>
+                                    </div>
+
+                                    <div class="package">
+                                        <div class="package-title">
+                                            <div class="package-name">
+                                                Package
+                                            </div>
+                                            <div class="package-value f1">
+                                                500
+                                            </div>
+                                        </div>
+
+                                        <a href="#top" class="package-button f1" onclick="handleBuyPacke(500)">
+                                            Choose
+                                        </a>
+                                    </div>
+
+                                    <div class="package">
+                                        <div class="package-title">
+                                            <div class="package-name">
+                                                Package
+                                            </div>
+                                            <div class="package-value f2">
+                                                1000
+                                            </div>
+                                        </div>
+
+                                        <a href="#top" class="package-button f2" onclick="handleBuyPacke(1000)">
+                                            Choose
+                                        </a>
+                                    </div>
+
+                                    <div class="package">
+                                        <div class="package-title">
+                                            <div class="package-name">
+                                                Package
+                                            </div>
+                                            <div class="package-value f3">
+                                                5000
+                                            </div>
+                                        </div>
+
+                                        <a href="#top" class="package-button f3" onclick="handleBuyPacke(5000)">
+                                            Choose
+                                        </a>
+                                    </div>
+
+                                    <div class="package">
+                                        <div class="package-title">
+                                            <div class="package-name">
+                                                Package
+                                            </div>
+                                            <div class="package-value f4">
+                                                10,000
+                                            </div>
+                                        </div>
+
+                                        <a href="#top" class="package-button f4" onclick="handleBuyPacke(10000)">
+                                            Choose
+                                        </a>
+                                    </div>
+
+                                    <uni-view class="more">
+                                        <!-- <span>No data</span> -->
+                                    </uni-view>
+                                </uni-view>
+                            </uni-view>
+                        </uni-view>
+
+                        <uni-view class="langModel">
+                            <uni-view class="mask"></uni-view>
+                            <uni-view class="main">
+                                <uni-view class="title">
+                                    Language
+                                    <i class="fa-solid fa-xmark"></i>
+                                </uni-view>
+                                <ul>
+                                    <li class="a cur">English</li>
+                                    <li class="a">Español</li>
+                                    <li class="a">Pусский</li>
+                                    <li class="a">Deutsch</li>
+                                    <li class="a">Français</li>
+                                    <li class="a">Italiano</li>
+                                    <li class="a">Português</li>
+                                    <li class="a">Bahasa Indonesia</li>
+                                    <li class="a">Türkçe</li>
+                                    <li class="a">Tiếng Việt</li>
+                                    <li class="a">ไทย</li>
+                                    <li class="a">日本語</li>
+                                    <li class="a">한국어</li>
+                                    <li class="a">简体中文</li>
+                                    <li class="a">繁体中文</li>
+                                </ul>
+                            </uni-view>
+                        </uni-view>
+
+                    </uni-view>
+                </uni-page-body>
+            </uni-page-wrapper>
+        </uni-page>
+
+        <!-- bottom nav -->
+        <uni-tabbar class="uni-tabbar-bottom" style="">
+            <div class="uni-tabbar" style="background-color: rgb(255, 255, 255); backdrop-filter: none;">
+                <div class="uni-tabbar-border" style="background-color: rgba(255, 255, 255, 0.33);"></div>
+
+                <a href="/index.html" class="uni-tabbar__item ">
+                    <div class="uni-tabbar__bd" style="height: 55px;">
+                        <div class="uni-tabbar__icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="uni-tabbar__label"
+                            style="color: rgb(51, 51, 51); font-size: 12px; line-height: normal; margin-top: 3px;">
+                            Home
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="/price.html" class="uni-tabbar__item active">
+                    <div class="uni-tabbar__bd" style="height: 55px;">
+                        <div class="uni-tabbar__icon">
+                            <i class="fa-solid fa-money-bill"></i>
+                        </div>
+                        <div class="uni-tabbar__label"
+                            style="color: rgb(51, 51, 51); font-size: 12px; line-height: normal; margin-top: 3px;">
+                            Price
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="/pool.html" class="uni-tabbar__item">
+                    <div class="uni-tabbar__bd" style="height: 55px;">
+                        <div class="uni-tabbar__icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div class="uni-tabbar__label"
+                            style="color: rgb(51, 51, 51); font-size: 12px; line-height: normal; margin-top: 3px;"> Pool
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="/share.html" class="uni-tabbar__item">
+                    <div class="uni-tabbar__bd" style="height: 55px;">
+                        <div class="uni-tabbar__icon">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <div class="uni-tabbar__label"
+                            style="color: rgb(51, 51, 51); font-size: 12px; line-height: normal; margin-top: 3px;">
+                            Share
+                        </div>
+
+                    </div>
+                </a>
+
+                <a href="/mine.html" class="uni-tabbar__item">
+                    <div class="uni-tabbar__bd" style="height: 55px;">
+                        <div class="uni-tabbar__icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="uni-tabbar__label"
+                            style="color: rgb(51, 51, 51); font-size: 12px; line-height: normal; margin-top: 3px;">
+                            Mine
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+            <div class="uni-placeholder" style="height: 55px;"></div>
+        </uni-tabbar>
+
+    </uni-app>
+</body>
+<script src="/assets/js/main.js"></script>
+<script>
+    const packageValue = document.querySelector("#packageValue")
+    const packageEarn = document.querySelector("#packageEarn")
+    const packageHZ = document.querySelector("#buyHZ")
+    const packagePrice = document.querySelector("#packagePrice")
+
+    const handleBuyPacke = (amount) => {
+        console.log(packageValue, "amount")
+        packageValue.innerText = amount
+        packagePrice.innerText = amount
+        packageHZ.value = amount
+        packageEarn.innerText = amount * 0.125
+    }
+</script>
+
+</html>
